@@ -22,6 +22,13 @@ class Ui_Dialog(object):
         self.groupBox = QtWidgets.QGroupBox(Dialog)
         self.groupBox.setGeometry(QtCore.QRect(30, 20, 581, 391))
         self.groupBox.setObjectName("groupBox")
+        self.horizontalSlider = QtWidgets.QSlider(Dialog)
+        self.horizontalSlider.setGeometry(QtCore.QRect(80, 430, 160, 22))
+        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider.setObjectName("horizontalSlider")
+        self.label = QtWidgets.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(310, 430, 54, 12))
+        self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept)
@@ -32,3 +39,4 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.groupBox.setTitle(_translate("Dialog", "GroupBox_Matplotlib的图形显示："))
+        self.label.setText(_translate("Dialog", "TextLabel"))

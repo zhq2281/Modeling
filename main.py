@@ -20,7 +20,9 @@ class Ui_Main(QtWidgets.QMainWindow,Ui_MainWindow):
         self.setupUi(self)
       #  self.pushButton.clicked.connect(MainDialogImgBW)
         self.menu_2.triggered.connect(MainDialogImgBW)
-
+        # menu_dialog()
+        # Ui_Main.menubar.setNativeMenuBar(False)
+        # Ui_MainWindow.
 
 # class MyFigure(FigureCanvas):
 #     def __init__(self,width=5, height=4, dpi=100):
@@ -94,11 +96,12 @@ class Ui_Main(QtWidgets.QMainWindow,Ui_MainWindow):
 #         self.gridlayout.addWidget(F1, 0, 2)
 
 #
-# class menu_dialog(QtWidgets.QMenu,Ui_MainWindow):
-#     def __init__(self):
-#         super(menu_dialog,self).__init__()
-#         self.setupUi(self)
-#         self.exec_()
+class menu_dialog(QtWidgets.QMenu,Ui_MainWindow):
+    def __init__(self):
+        super(menu_dialog,self).__init__()
+        self.setupUi(self)
+        self.menubar.setNativeMenuBar(False)
+        self.exec_()
 
 
 if __name__=="__main__":

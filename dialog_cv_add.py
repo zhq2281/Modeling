@@ -11,6 +11,7 @@ class cv_add_win(QDialog,Ui_Dialog):
         super(cv_add_win,self).__init__()
         self.setupUi(self)
         self.captured = np.ndarray(())
+        self.captured2 = np.ndarray(())
         self.ptn_open.clicked.connect(self.btnReadImage_Clicked)
         self.ptn_huidu.clicked.connect(self.btnGray_Clicked)
         self.ptn_erzhi.clicked.connect(self.btnThreshold_Clicked)
@@ -24,7 +25,7 @@ class cv_add_win(QDialog,Ui_Dialog):
         if filename is "":
             return
         else:
-            self.captured = cv2.imread(str(filename))
+            self.captured = cv2.imread(filename,-1)
             # OpenCV图像以BGR通道存储，显示时需要从BGR转到RGB
             self.captured = cv2.cvtColor(self.captured, cv2.COLOR_BGR2RGB)
             self.captured2 = self.captured
@@ -61,7 +62,7 @@ class cv_add_win(QDialog,Ui_Dialog):
             self.label.size()))
     def btnMohu_Clicked(self):
 
-
+        self.captured2 = cv2.blur(self.captured2, (5, 5))
         # 对图像做模糊处理，窗口设定为5*5
         height, width, channel = self.captured2.shape
         bytesPerline = 3 * width

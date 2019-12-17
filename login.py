@@ -14,6 +14,11 @@ class login_window(QtWidgets.QWidget,Ui_widget):
         self.setupUi(self)
         self.btn_login_submit.clicked.connect(self.btn_login_fun)
         self.lineEdit_passwd.returnPressed.connect(self.btn_login_fun)
+        self.palette = QPalette()
+        self.palette.setBrush(QPalette.Background,QBrush(QPixmap("./pic/login.jpg")))
+        self.setPalette(self.palette)
+
+
     def btn_login_fun(self):
         account=self.lineEdit_user.text()
         password=self.lineEdit_passwd.text()

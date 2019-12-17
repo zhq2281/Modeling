@@ -23,12 +23,14 @@ class Ui_Main(QtWidgets.QMainWindow,Ui_MainWindow):
         self.actionplot_Lne.triggered.connect(MainDialogImgBW)
         self.actionOpenCV.triggered.connect(cv_win)
 
+        self.setStyleSheet("#MainWindow{background-image:url(./pic/back.jpg);}")  # mainwindow background pic
+
 
 
 if __name__=="__main__":
     app=QtWidgets.QApplication(sys.argv)
     window=Ui_Main()
     main=MainDialogImgBW()
-    main.show()
-    window.show()
+    # main.show()
+    # window.show()
     sys.exit(app.exec_())

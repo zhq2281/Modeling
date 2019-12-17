@@ -24,6 +24,8 @@ class cv_win(QDialog,Ui_Dialog):
         if filename is "":
             return
         self.img=cv2.imread(filename,-1)
+        # self.size=(int(cv_win.width(self)*0.8),int(cv_win.height(self)*0.8))
+        # self.shrink=cv2.resize(self.img,self.size,interpolation=cv2.INTER_AREA)
         if self.img.size==1:
             return
         self.refreshShow()

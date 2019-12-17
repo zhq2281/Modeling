@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>623</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="nativeMenuBar">
@@ -37,6 +37,7 @@
      <string>建模</string>
     </property>
     <addaction name="actionplot_Lne"/>
+    <addaction name="actionOpenCV"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -62,6 +63,11 @@
   <action name="actionabout">
    <property name="text">
     <string>about </string>
+   </property>
+  </action>
+  <action name="actionOpenCV">
+   <property name="text">
+    <string>OpenCV</string>
    </property>
   </action>
  </widget>

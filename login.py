@@ -22,6 +22,7 @@ class login_window(QtWidgets.QWidget,Ui_widget):
             window.hide()
         else:
             reply=QMessageBox.warning(self,"提示","密码错误请重新输入！",QMessageBox.Yes)
+            self.lineEdit_passwd.setText("")
 if __name__=="__main__":
     app=QtWidgets.QApplication(sys.argv)
     window=login_window()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_main.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.2
+# Created by: PyQt5 UI code generator 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 23))
         self.menubar.setNativeMenuBar(False)
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
@@ -37,8 +37,11 @@ class Ui_MainWindow(object):
         self.actionplot_Lne.setObjectName("actionplot_Lne")
         self.actionabout = QtWidgets.QAction(MainWindow)
         self.actionabout.setObjectName("actionabout")
+        self.actionOpenCV = QtWidgets.QAction(MainWindow)
+        self.actionOpenCV.setObjectName("actionOpenCV")
         self.menu.addAction(self.actionopen)
         self.menu_2.addAction(self.actionplot_Lne)
+        self.menu_2.addAction(self.actionOpenCV)
         self.menu_3.addAction(self.actionabout)
         self.menubar.addAction(self.menu.menuAction())
         self.menubar.addAction(self.menu_2.menuAction())
@@ -56,3 +59,4 @@ class Ui_MainWindow(object):
         self.actionopen.setText(_translate("MainWindow", "open"))
         self.actionplot_Lne.setText(_translate("MainWindow", "plot Line"))
         self.actionabout.setText(_translate("MainWindow", "about "))
+        self.actionOpenCV.setText(_translate("MainWindow", "OpenCV"))

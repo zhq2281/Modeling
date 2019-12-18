@@ -38,6 +38,7 @@
     </property>
     <addaction name="actionplot_Lne"/>
     <addaction name="actionOpenCV"/>
+    <addaction name="actionOpenCv_add"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -68,6 +69,11 @@
   <action name="actionOpenCV">
    <property name="text">
     <string>OpenCV</string>
+   </property>
+  </action>
+  <action name="actionOpenCv_add">
+   <property name="text">
+    <string>OpenCV-add</string>
    </property>
   </action>
  </widget>

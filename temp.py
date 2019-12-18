@@ -1,40 +1,50 @@
-# -*- coding: utf-8 -*-
-# Form implementation generated from reading ui file 'testplot2pyqt5.ui'
-# Created by: PyQt5 UI code generator 5.10
-# WARNING! All changes made in this file will be lost!
-import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(718, 515)
-        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
-        self.buttonBox.setGeometry(QtCore.QRect(370, 470, 341, 32))
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.widget = QtWidgets.QWidget(Dialog)
-        self.widget.setGeometry(QtCore.QRect(10, 10, 691, 451))
-        self.widget.setObjectName("widget")
-        self.groupBox = QtWidgets.QGroupBox(self.widget)
-        self.groupBox.setGeometry(QtCore.QRect(0, 0, 691, 451))
-        self.groupBox.setObjectName("groupBox")
-
-        self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
-
-    def retranslateUi(self, Dialog):
-        _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.groupBox.setTitle(_translate("Dialog", "GroupBox_Matplotlib的图形显示："))
-
-if __name__=="__main__":
-    app=QtWidgets.QApplication(sys.argv)
-    window=QtWidgets.QDialog()
-    ui=Ui_Dialog()
-    ui.setupUi(window)
-    window.show()
-    sys.exit(app.exec_())
+#coding:utf-8
+from tkinter import *
+import time
+root = Tk()
+def cacl(input_str):
+    if "x" in input_str:
+        ret = input_str.split("x")
+        return int(ret[0]) * int(ret[1])
+def callback(n):
+    print(n)
+def callback1(n):
+    print(n)
+class App:
+    def __init__(self, master):
+        frame1 = Frame(master)
+        frame1.pack()
+        frame = Frame(master)
+        frame.pack()
+        Button(frame, text="1",command=lambda: callback(1) ).grid(row=0,column=0)
+        Button(frame, text="2",command=lambda: callback(2) ).grid(row=0,column=1)
+        Button(frame, text="3",command=lambda: callback(3) ).grid(row=0,column=2)
+        Button(frame, text="4",command=lambda: callback(4) ).grid(row=1,column=0)
+        Button(frame, text="5",command=lambda: callback(5) ).grid(row=1,column=1)
+        Button(frame, text="6",command=lambda: callback(6) ).grid(row=1,column=2)
+        Button(frame, text="7",command=lambda: callback(7) ).grid(row=2,column=0)
+        Button(frame, text="8",command=lambda: callback(8) ).grid(row=2,column=1)
+        Button(frame, text="9",command=lambda: callback(9) ).grid(row=2,column=2)
+        Button(frame, text="0",command=lambda: callback(0) ).grid(row=3,column=0)
+        Button(frame, text="+",command=lambda: callback1("+") ).grid(row=3,column=1)
+        Button(frame, text="-",command=lambda: callback1("-") ).grid(row=3,column=2)
+        Button(frame, text="*",command=lambda: callback1("*") ).grid(row=4,column=1)
+        Button(frame, text="/",command=lambda: callback1("/") ).grid(row=4,column=2)
+        Button(frame, text="=", command=self.say_hi).grid(row=4,column=0)
+        w = Label(frame1,text="输入结果")
+        w.pack()
+        self.e = Entry(frame1)
+        self.e.pack(padx=5)
+        w1 = Label(frame1,text="计算结果")
+        w1.pack()
+        v = StringVar()
+        e1 = Entry(frame1, textvariable=v)
+        v.set("")
+        self.v = v
+        e1.pack()
+    def say_hi(self):
+        print("hi there, everyone!",self.e.get())
+        input_str = self.e.get()
+        self.v.set(cacl(input_str))
+app = App(root)
+root.mainloop()
